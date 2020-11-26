@@ -1,0 +1,136 @@
+﻿1.결합방향과 우선순위에 대하여 설명하시오.
+
+	대입연산자(=)를 제외한 모든 연산자들은 우선순위가 같을 경우 왼쪽에서 오른쪽으로 결합하며 대입연산자만 오른쪽에서 왼쪽으로 결합한다.
+	연산자의 우선순위는 산술 -> 비교 -> 논리 -> 대입 연산자 순으로 이루어지며
+	사칙연산의 경우 곱하기, 나누기 -> 더하기, 빼기 순으로 우선순위를 갖는다.
+
+2.1 초과 100 미만인가? 를 코딩을 하게 되면?
+
+	int num;
+	boolean result = (num > 1) && (num < 100);
+
+3.2의 배수 또는 3의 배수? 를 코딩을 하게 되면?
+
+	int num;
+	boolean result = (num % 2 == 0) || (num % 3 == 0)
+
+4. && 와  || 설명하시오.
+
+	&&는 and 연산자이고 ||는 or 연산자이다.
+
+5. 아래의 프린트 결과를 예측해 보고, 코딩후 결과를 확인하시오
+class SCE {
+    public static void main(String[] args) {
+        int num1 = 0; 
+        int num2 = 0;
+        boolean result;
+        
+        result = ((num1 += 10) < 0) && ((num2 += 10) > 0);
+        System.out.println("result = " + result);	//result = false
+        System.out.println("num1 = " + num1);		//num1 = 10
+        System.out.println("num2 = " + num2 + '\n');	//num2 = 0
+		
+        result = ((num1 += 10) > 0) || ((num2 += 10) > 0);
+        System.out.println("result = " + result);	//result = true
+        System.out.println("num1 = " + num1);		//num1 = 20
+        System.out.println("num2 = " + num2);		//num2 = 0
+    }
+}
+
+6.아래가 에러가 나는 이유를 설명하고, 수정하시오
+short num1
+short num = -num 
+
+	num은 short형이지만 -num을 하는 과정에서 int형으로 변환되기 때문에 에러가 발생한다.
+	(-num 은 -1 * num 으로 연산하게 되므로 short형은 연산 과정에서 int형으로 변환된다.)
+
+7.전위증가 연산자와 후위증가 연산자의 차이는?
+
+	전위증가 연산자는 실행단계 전에 연산이 이루어지고 후위증가 연산자는 실행당계 후에 연산이 이루어진다.
+
+8.아래의 비트연산자 4가지를 설명하시오.
+-&,^,|,~
+
+	&는 and 연산자이다.
+	^는 XOR 연산자이다.
+	|는 or 연산자이다.
+	~는 NOT 연산자이다.
+
+	비트연산자들은 정수 연산시에 정수를 2진수로 변경하여 각각의 비트에 대해 연산한다.
+
+9.아래의 쉬프트 연산자에 대하여 설명하시오.
+<< , >>
+
+	쉬프트 연산자는 수를 2진수로 표현 후 화살표 방향으로 숫자를 쉬프트 시킨다.
+	즉, <<는 왼쪽, >>는 오른쪽 방향으로 숫자를 쉬프트 시킨다.
+	2진수에서 한칸 왼쪽으로 쉬프트 하는 것은 2를 곱하는 것과 같고 한칸 오른쪽으로 쉬프트 하는 것은 2로 나누는 것과 같다. 
+
+10.전위연산자와 후위연산자에 대하여 설명하시오.
+
+	전위증가 연산자는 실행단계 전에 연산이 이루어지고 후위증가 연산자는 실행당계 후에 연산이 이루어진다.
+	{
+	int num = 10;
+	int result = num-- + 5 + --num;
+	System.out.println("result = " + result)	//result = 23
+	}
+	위의 연산을 수행 시 (--num + 5) 는 15가 되고 한 번의 연산이 실행되었으므로 후위연산자가 실행되어 num은 9가 된다.
+	그 뒤 15 + --num은 전위연산자가 먼저 실행되므로 15 + 8 이되어 result는 23이 된다.
+
+11.아래의 출력값을 예측하시오.
+class AssignSteResult {
+    public static void main(String[] args) {
+        int num1 = 10, num2 = 20, num3 = 30;
+        num1 = num2 = num3;
+
+        /*
+          = 연산자는 결합 방향이 오른쪽에서 왼쪽으로 진행된다. 
+          따라서 위의 문장은 다음과 같다. 
+          num1 = (num2 = num3);        
+        */
+        
+        System.out.println(num1);	//30
+        System.out.println(num2);	//30
+        System.out.println(num3);	//30
+    }
+}
+
+	= 연산자의 결합 방향이 오른쪽에서 왼쪽으로 진행되므로 num2 에 num3인 30이 대입되고 그 후, num1에 num2인 30이 대입되므로
+	num1, num2, num3 모두 30이 된다.
+12.아래의 출력값을 예측하시오.
+class SCE {
+    public static void main(String[] args) {
+        int num1 = 0; 
+        int num2 = 0;
+        boolean result;
+
+        num1 += 10;
+        num2 += 10;        
+        result = (num1 < 0) && (num2 > 0);
+
+        System.out.println("result = " + result);	//result = false
+        System.out.println("num1 = " + num1);		//num1 = 10
+        System.out.println("num2 = " + num2 + '\n');	//num2 = 10
+		
+        num1 += 10;
+        num2 += 10;        
+        result = (num1 > 0) || (num2 > 0);
+
+        System.out.println("result = " + result);	//result = true
+        System.out.println("num1 = " + num1);		//num1 = 20
+        System.out.println("num2 = " + num2);		//num2 = 20
+    }
+}
+
+13.아래의 출력값을 예측하시오.
+class AddNum {
+    public static void main(String[] args) {
+        int result = 3 + 6;
+        System.out.println("3 + 6 = " + result);		//3 + 6 = 9
+        
+        result += 9;
+        System.out.println("3 + 6 + 9 = " + result);		//3 + 6 + 9 = 18
+        
+        result += 12;
+        System.out.println("3 + 6 + 9 + 12 = " + result);	//3 + 6 + 9 + 12 = 30
+    }
+}
