@@ -1,0 +1,216 @@
+﻿1.반복문 3가지의 무한루프 만드는 방법은?
+
+	for( ; ; ) {
+	}
+	while(ture) {
+	}
+	do{
+	} while(true);
+
+2.구구단 출력을 하시오.
+	public class Gugudan {
+		
+		public static void main(String[] args) {
+			for(int i = 2; i <= 9; i++) {
+				for(int j = 1; j <= 9; j++) {
+					System.out.println(i + " X " + j + " = " + (i * j));
+				}
+			}
+		}
+	}
+
+3.짝수단만 찍으시오.
+	public class Gugudan {
+		
+		public static void main(String[] args) {
+			for(int i = 2; i <= 9; i++) {
+				if(i % 2 != 0) {
+					continue;
+				}
+				for(int j = 1; j <= 9; j++) {
+					System.out.println(i + " X " + j + " = " + (i * j));
+				}
+			}
+		}
+	}
+
+4.3의 배수인 단만 출력하시오.
+	public class Gugudan {
+		
+		public static void main(String[] args) {
+			for(int i = 2; i <= 9; i++) {
+				if(i % 3 != 0) {
+					continue;			
+				}
+				for(int j = 1; j <= 9; j++) {
+					System.out.println(i + " X " + j + " = " + (i * j));
+				}
+			}
+		}
+	}
+
+5.아래의 Star를 찍으시오.
+
+*****
+*****
+*****
+*****
+*****
+	public class Star {
+		
+		public static void main(String[] args) {
+			for(int i = 1; i <= 5; i++) {
+				for(int j = 1; j <= 5; j++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+		}
+	}
+		
+*
+**
+***
+****
+*****
+	public class Star {
+		
+		public static void main(String[] args) {
+			for(int i = 1; i <= 5; i++) {
+				for(int j = 1; j <= i; j++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+		}
+	}
+		
+*****
+****
+***
+**
+*
+	public class Star {
+		
+		public static void main(String[] args) {
+			for(int i = 1; i <= 5; i++) {
+				for(int j = i; j <= 5; j++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+		}
+	}
+
+    *
+   **
+  ***
+ ****
+*****
+	public class Star {
+		
+		public static void main(String[] args) {
+			for(int i = 1; i <= 5; i++) {
+				for(int j = i; j < 5; j++) {
+					System.out.print("  ");
+				}
+				for(int k = 1; k <= i; k++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+		}	
+	}
+		
+
+   *
+  ***
+ *****
+******* 
+
+	public class Star {
+		
+		public static void main(String[] args) {
+			for(int i = 1; i <= 5; i++) {
+				for(int j = i; j < 5; j++) {
+					System.out.print("  ");
+				}
+				for(int k = 1; k <= i*2-1; k++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+		}		
+	}
+
+
+6.함수는 어떻게 알아 볼수 있는가?
+
+	함수는 main함수에서 호출하여 사용하거나 main함수와 같은 레벨에 생성되어 있다.
+	함수를 호출할 때는 함수이름(파라미터)로 호출하므로 함수임을 알아볼 수 있다.
+	예를들어 자주 사용하는 System.out.println(); 또한 println이라는 함수를 호출해서 사용하는 것이다.
+	생성된 함수의 경우 형태를 보고 함수임을 알아볼 수 있다.
+	public static int method(int num) {} 과 같이 중괄호로 내용을 포함하고 있다.
+
+7.함수는 어떻게 만드는가?
+
+	함수는 클래스 안에 생성할 수 있고 public static int method(int num) {} 과 같이 만들 수 있다.
+	여기서 int는 리턴 값의 타입을 알려주고 method는 함수의 이름이며 (int num)은 입력값이다.
+	함수안에 또 다른 함수는 만들 수 없으므로 주의해야 한다.
+
+8.함수는 어떻게 써먹는가?
+
+	함수를 사용할 때는 함수의 이름으로 호출할 수 있다.
+	예를들어, method()라는 함수 가 있을 때, main 함수에서 method();라고 호출할 수 있다.
+	코딩을 하면서 같은 코드를 중복해서 작성해야 하는 경우 중복해서 작성하지 말고 함수로 만들어서 호출하는것이 바람직하다.
+
+9.아래의 함수를 만드시오.
+함수이름: starPrint
+매개변수: type 1개
+기능: 매개변수에 3를 전달하면 3층 석탑, 5를 전달하면 5층석탑
+예) 3전달시 3층석탑
+*
+**
+***
+5전달시 5층석탑
+*
+**
+***
+****
+*****
+	public static void starPrint(int num) {
+		for(int i = 1; i <= num; i++) {
+				for(int j = 1; j <= i; j++) {
+					System.out.print("*");
+				}
+			System.out.println();
+			}
+	}
+
+ 
+10.아래의 함수를 만들고,해당함수를 호출하여 확인하시오. 
+함수이름: getGrade()
+매개변수: double type 1개
+리턴: 수 우 미 양 가 중 하나의 char 타입
+
+	public static void main(String[] args) {
+		double score = 80;
+		getGrade(score);
+	}
+
+	public static char getGrade(double score) {
+		return (score>=90) ? '수' : (score>=80) ? '우' : (score>=70) ? '미' : (score>=60) ? '양' : '가';
+	}
+
+11.매개변수 하나를 받아 원의 넓이를 리턴하는 함수를 작성하시오.
+
+	public static double circleArea(double radius) {
+		return radius * radius * Math.PI;
+	}
+
+12.매개변수 두개를 받아, 사각형의 넓이를 리턴하는 함수를 작성하시오.
+
+	
+	public static double squareArea(double width, double height) {
+		return width * height;
+	}
