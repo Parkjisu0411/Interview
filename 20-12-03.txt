@@ -27,7 +27,9 @@
 
 6.정보은닉에 대하여 설명하시오.
 
-	
+	 접근제한자를 통해 클래스의 변수 등을 외부에서 직접 설정하지 못하게 하여 정보를 은닉하는 것이다.
+	 클래스의 변수들은 항상 private을 통해 정보 은닉을 해야 한다.
+	 객체지향언어인 자바의 장점 중 하나이다.
 
 7.접근제한자 4가지 종류에 대하여 설명하시오.
 
@@ -42,7 +44,8 @@
 9.class 에서 붙일수 있는 접근 제한자 2개를 설명하고, 해당 접근제한자의 사용 목적은?
 
 	class에는 public 과 default만 붙일 수 있다.
-
+	public은 다른 package에서도 해당 class의 객체 생성을 가능하게 하기 때문에 여러 package에서 해당 class의 객체를 생성할 때 사용한다.
+	default는 같은 package 내에서만 해당 class의 객체 생성이 가능하기 때문에 해당 class의 객체 생성을 제한할때 사용한다.
 
 10.가위, 바위, 보 게임 작성하시오.
 
@@ -98,107 +101,43 @@ class RockScissorPaper {
 			if(me.equals("rock")) {
 				if(computer.equals("rock")) {
 					System.out.println("draw (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else if(computer.equals("scissor")) {
 					System.out.println("win (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else {
 					System.out.println("defeat (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 			}
 			else if(me.endsWith("scissor")) {
 				if(computer.equals("rock")) {
 					System.out.println("defeat (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else if(computer.equals("scissor")) {
 					System.out.println("draw (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else {
 					System.out.println("win (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 			}
 			else {
 				if(computer.equals("rock")) {
 					System.out.println("win (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else if(computer.equals("scissor")) {
 					System.out.println("defeat (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
 				else {
 					System.out.println("draw (me : " + me + " / " + "computer : " + computer + ")");
-					System.out.print("계속 하시겠습니까?(y/n) ");
-					String answer = sc.next();
-					if(answer.equals("y"))
-						continue;
-					else {
-						System.out.println("게임을 종료합니다.");
-						return;
-					}
 				}
+			}
+			System.out.print("계속 하시겠습니까?(y/n) ");
+			String answer = sc.next();
+			if(answer.equals("y"))
+				continue;
+			else {
+				System.out.println("게임을 종료합니다.");
+				return;
 			}
 		}
 	}
