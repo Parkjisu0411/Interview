@@ -1,21 +1,21 @@
-﻿1.아래가 의도하지 않은 결과를 나타내는 이유를 설명하시오.
-char ch = '가';
-System.out.println(ch + '\n')
+### 1.아래가 의도하지 않은 결과를 나타내는 이유를 설명하시오.
+>char ch = '가';  
+>System.out.println(ch + '\n')  
 
 	ch는 char타입이기 때문에 (ch + '\n') 연산시에 int형으로 변환되기 때문이다.
 	2바이트의 메모리를 할당받는 char는 연산시에 항상 int형으로 변환된다.
 
-2.변수의 scope 는?
+### 2.변수의 scope 는?
 
 	변수의 범위는 변수가 선언된 블럭의 범위이다. 블럭의 범위는 중괄호로 알아볼 수 있다.
 
-3.지역변수?
+### 3.지역변수?
 
 	지역변수란 메소드 안에서 선언된 변수로 메소드 안에서만 존재한다.
 	따라서 메소드가 끝나게 되면 지역변수가 할당받은 메모리가 삭제된다.
 
-4.펙토리얼을 구하는 재귀 함수를 만드시오.
-
+### 4.펙토리얼을 구하는 재귀 함수를 만드시오.
+```java
 	public static int factorial(int num) {
 		if(num == 1)
 			return 1;
@@ -23,17 +23,17 @@ System.out.println(ch + '\n')
 			return num * factorial(num-1);
 		}
 	}
-
-5.클래스의 구성요소는 무엇인가?
+```
+### 5.클래스의 구성요소는 무엇인가?
 
 	클래스는 생성자, 변수, 메소드로 이루어져 있다.
 	생성자는 객체의 초기화를 담당하고 있고 개발자가 함수를 생성하지 않아도 자동으로 생성된다.
 	메소드는 선언된 변수를 가져오고 설정하는 getter, setter함수가 대표적이다.
 
-6.원의 넓이는 구하는 프로그램을 아래와 같이 작성하시오.
--원클래스를 만들것
--메인 메소드를 가진 다른 클래스에서 원 객체를 생성할것
-
+### 6.원의 넓이는 구하는 프로그램을 아래와 같이 작성하시오.
+>원클래스를 만들것  
+>메인 메소드를 가진 다른 클래스에서 원 객체를 생성할것  
+```java
 	public class Circle {
 
 		int radius;
@@ -52,13 +52,14 @@ System.out.println(ch + '\n')
 			Circle circle = new Circle();
 		}
 	}
+```
 
-
-7.객체란 무엇인가?
+### 7.객체란 무엇인가?
 
 	객체란 실제로 존재하는 것으로 자바에서 Account나 Circle등을 데이터로 구현한 것을 객체라고 한다.
 
-8. 아래의 클래스에 대하여, 메모리 그림을 그리시오.
+### 8. 아래의 클래스에 대하여, 메모리 그림을 그리시오.
+```java
 Rectangle rec = new Rectangle();
  
 public class Rectangle {
@@ -86,14 +87,14 @@ public class Rectangle {
 	}
 	
 }
-
-9.클래스와 객체의 차이는 무엇인가?
+```
+### 9.클래스와 객체의 차이는 무엇인가?
 
 	클래스란 객체를 생성하기 위한 도구이다. 클래스를 통해서 객체를 정의하고 Main 클래스에서 객체 클래스를 호출함으로써 간단한게 객체의 생성이 가능하다.
 
-10.아래의 프로그램을 작성하시오.
--1 부터 num 까지 합을 구하는 class 를 작성하도록 하시오.
-
+### 10.아래의 프로그램을 작성하시오.
+>-1 부터 num 까지 합을 구하는 class 를 작성하도록 하시오.
+```java
 	public class Sum {	
 
 		int sum;
@@ -105,14 +106,15 @@ public class Rectangle {
 			}
 			return sum;
 	}
-
-11.아래의 클래스를 작성하시오.
+```
+### 11.아래의 클래스를 작성하시오.
+```java
 StraPrint strPrint = new StarPrint();
 
 strPrint.printTriangle(3); 
 System.out.println();
 strPrint.printReverseTriangle(3); 
-===============================
+
 *
 **
 ***
@@ -120,6 +122,8 @@ strPrint.printReverseTriangle(3);
 ***
 **
 *
+```
+```java
 	public class StarPrint {
 
 		public void printTriangle(int num) {
@@ -139,14 +143,14 @@ strPrint.printReverseTriangle(3);
 				System.out.println();
 			}
 	}
+```
 
+### 12.아래의 프로그래밍을 작성하시오.
 
-12.아래의 프로그래밍을 작성하시오.
-
-Gugudan gugudan = new Gugudan();
-gugudan.printGugu(10);  //1단부터 10단까지 출력
-gugudan.printGugu(20);  //1단부터 20단까지 출력
-
+>Gugudan gugudan = new Gugudan();
+>gugudan.printGugu(10);  //1단부터 10단까지 출력
+>gugudan.printGugu(20);  //1단부터 20단까지 출력
+```java
 	public class Gugudan {
 
 		public void printGugu(int num) {
@@ -157,11 +161,12 @@ gugudan.printGugu(20);  //1단부터 20단까지 출력
 			}
 		}
 	}
-
-13. 아래의 BankAccount 객체에 대하여 그림을 그리시오.
+```
+### 13. 아래의 BankAccount 객체에 대하여 그림을 그리시오.
+```java
    BankAccount ref1 = new BankAccount();
    BankAccount ref2 = ref1;
-
+```
 
 
 
